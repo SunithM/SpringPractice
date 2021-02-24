@@ -3,26 +3,26 @@ package com.suni.springdemo;
 public class CricketCoach implements Coach{
 	//define private field for the dependency
 	private FortuneService fortuneService;
-	private String teamName;
-	private String email;
+//	private String teamName;
+//	private String email;
 	
-	public String getTeamName() {
-		return teamName;
-	}
-
-	public void setTeamName(String teamName) {
-		System.out.println("CricketCoach:Inside setter method-setTeamName");
-		this.teamName = teamName;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		System.out.println("CricketCoach:Inside setter method-setEmail");
-		this.email = email;
-	}
+//	public String getTeamName() {
+//		return teamName;
+//	}
+//
+//	public void setTeamName(String teamName) {
+//		System.out.println("CricketCoach:Inside setter method-setTeamName");
+//		this.teamName = teamName;
+//	}
+//
+//	public String getEmail() {
+//		return email;
+//	}
+//
+//	public void setEmail(String email) {
+//		System.out.println("CricketCoach:Inside setter method-setEmail");
+//		this.email = email;
+//	}
 
 	public CricketCoach() {
 		System.out.println("CricketCoach:No argument constructor");
@@ -37,6 +37,12 @@ public class CricketCoach implements Coach{
 		return "Spend 30 min catch practice";
 		
 	}
+
+	public CricketCoach(FortuneService fortuneService) {
+	super();
+	System.out.println("CricketCoach : Parameterized contructor");
+	this.fortuneService = fortuneService;
+}
 
 	@Override
 	public String getDailyFortune() {

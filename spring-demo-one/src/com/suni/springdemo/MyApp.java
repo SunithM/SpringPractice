@@ -1,15 +1,15 @@
 package com.suni.springdemo;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class MyApp {
 
 	public static void main(String[] args) {
-		//create the object
-//		Coach theCoach=new TrackCoach();
-//		
-//				
-//		//use object
-//		System.out.println(theCoach.getDailyWorkout());
-
+		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("ApplicationContextTest.xml");
+		CricketCoach test=context.getBean("myCricketCoach",CricketCoach.class);
+		System.out.println(test.getDailyFortune());
+		
+		context.close();
 	}
 
 }

@@ -6,23 +6,23 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-	
+
 	<!-- Load property file -->
-	<context:property-placeholder location="sports.properties"/>
+	<context:property-placeholder
+		location="sports.properties" />
 	<!-- Define your beans here -->
 	<!-- Define the dependency -->
 
 	<bean id="myFortuneServices"
-    		class="com.suni.springdemo.RandomFortuneServices">
-    	</bean>
-    
- 	<bean id="myTrackCoach"
- 		class="com.suni.springdemo.TrackCoach">	 
- 		
- 		<!-- set up constructor injection -->
- 		<constructor-arg ref="myFortuneServices" />
- 		</bean>
-	
+		class="com.suni.springdemo.RandomFortuneServices">
+	</bean>
+
+	<bean id="myTrackCoach" class="com.suni.springdemo.TrackCoach">
+
+		<!-- set up constructor injection -->
+		<constructor-arg ref="myFortuneServices" />
+	</bean>
+
 </beans>
 
 
